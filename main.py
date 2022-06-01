@@ -33,13 +33,16 @@ def mat_mul_torch(A, B):
 # 2. dot product
 
 def dot_product_np(a, b):
-  np.dot(a, b)
+  c = np.dot(a, b)
+  return c
 
 def dot_product_sp(a, b):
-  sp.dot(a, b)
+  c = sp.dot(a, b)
+  return c
 
 def dot_product_torch(a, b):
-  torch.dot(a, b)
+  c = torch.dot(a, b)
+  return c
 
 # 3. elemrnt wise operations
 
@@ -82,9 +85,11 @@ def LU_decomp_np(A):
 
 def LU_decomp_sp(A):
   P, L, U = scipy.linalg.lu(A)
+  return P, L, U
 
 def LU_decomp_torch(A):
   A_LU, pivots = torch.lu(A)
+  return A_LU, pivots
 
 # 5. QR decomp
 
@@ -113,20 +118,25 @@ def QR_decomp_np(A):
 
 def QR_decomp_sp(A):
   q, r = sp.linalg.qr(A)
+  return q, r
 
 def QR_decomp_torch(A):
   q, r = torch.qr(A)
+  return q, r
 
 # 6. Eig value
 
 def eig_np(A):
   vals, vecs = np.linalg.eig(A)
+  return vals, vecs
 
 def eig_sp(A):
   vals, vecs = np.linalg.eig(A)
+  return vals, vecs
 
 def eig_torch(A):
   vals, vecs = torch.eig(A)
+  return vals, vecs
 
 # Testing
 
