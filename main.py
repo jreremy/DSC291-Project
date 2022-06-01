@@ -164,7 +164,7 @@ np.random.seed(42)
 times = []
 A = np.random.rand(1000, 1000)
 B = np.random.rand(1000, 1000)
-# times.append(profile_fn(mat_mul_naive, [A, B], 1))
+times.append(profile_fn(mat_mul_naive, [A, B], 1))
 times.append(profile_fn(mat_mul_np, [A, B], 100))
 times.append(profile_fn(mat_mul_sp, [A, B], 100))
 C = torch.rand(1000, 1000)
@@ -173,19 +173,19 @@ times.append(profile_fn(mat_mul_torch, [C, D], 100))
 times.append(2.633488)
 plot_times(
   times=times, 
-  # tools=['Naive Implementation', 'NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
-  tools=['NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
+  tools=['Naive Implementation', 'NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
+  # tools=['NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
   title1='Executiion Time (n=1000)', 
   title2='Efficiency (assuming $n^3$ FLOPS)',
   flops=1000**3,
-  # iterations=[1, 100, 100, 100, 100])
-  iterations=[100, 100, 100, 100])
+  iterations=[1, 100, 100, 100, 100])
+  # iterations=[100, 100, 100, 100])
 
 # Matrix Vector Product
 times = []
 A = np.random.rand(1000, 1000)
 b = np.random.rand(1000, 1)
-# times.append(profile_fn(mat_mul_naive, [A, b], 10))
+times.append(profile_fn(mat_mul_naive, [A, b], 10))
 times.append(profile_fn(mat_mul_np, [A, b], 10000))
 times.append(profile_fn(mat_mul_sp, [A, b], 10000))
 C = torch.rand(1000, 1000)
@@ -194,19 +194,19 @@ times.append(profile_fn(mat_mul_torch, [C, d], 10000))
 times.append(0.030656)
 plot_times(
   times=times, 
-  # tools=['Naive Implementation', 'NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
-  tools=['NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
+  tools=['Naive Implementation', 'NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
+  # tools=['NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
   title1='Executiion Time (n=1000)', 
   title2='Efficiency (assuming $n^2$ FLOPS)',
   flops=1000**2,
-  # iterations=[10, 10000, 10000, 10000, 10000])
-  iterations=[10000, 10000, 10000, 10000])
+  iterations=[10, 10000, 10000, 10000, 10000])
+  # iterations=[10000, 10000, 10000, 10000])
 
 # Dot Product
 times = []
 a = np.random.rand(1, 1000)
 b = np.random.rand(1000, 1)
-# times.append(profile_fn(mat_mul_naive, [a, b], 1000))
+times.append(profile_fn(mat_mul_naive, [a, b], 1000))
 times.append(profile_fn(dot_product_np, [a, b], 100000))
 times.append(profile_fn(dot_product_sp, [a, b], 100000))
 c = torch.rand(1000)
@@ -215,19 +215,19 @@ times.append(profile_fn(dot_product_torch, [c, d], 100000))
 times.append(5.313654)
 plot_times(
   times=times, 
-  # tools=['Naive Implementation', 'NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
-  tools=['NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
+  tools=['Naive Implementation', 'NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
+  # tools=['NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
   title1='Executiion Time (n=1000)', 
   title2='Efficiency (assuming $n$ FLOPS)',
   flops=1000,
-  # iterations=[100, 100000, 100000, 100000, 100000])
-  iterations=[100000, 100000, 100000, 100000])
+  iterations=[100, 100000, 100000, 100000, 100000])
+  # iterations=[100000, 100000, 100000, 100000])
 
 # Element-wise Addition/Multiplication
 times = []
 A = np.random.rand(1000, 1000)
 B = np.random.rand(1000, 1000)
-# times.append(profile_fn(element_wise_ops_naive, [np.copy(A), np.copy(B)], 10))
+times.append(profile_fn(element_wise_ops_naive, [np.copy(A), np.copy(B)], 10))
 times.append(profile_fn(element_wise_ops_np, [A, B], 1000))
 C = torch.rand(1000, 1000)
 D = torch.rand(1000, 1000)
@@ -235,18 +235,18 @@ times.append(profile_fn(element_wise_ops_torch, [C, D], 1000))
 times.append(48.191421)
 plot_times(
   times=times, 
-  # tools=['Naive Implementation', 'NumPy', 'PyTorch', 'MATLAB'],
-  tools=['NumPy', 'PyTorch', 'MATLAB'],
+  tools=['Naive Implementation', 'NumPy', 'PyTorch', 'MATLAB'],
+  # tools=['NumPy', 'PyTorch', 'MATLAB'],
   title1='Executiion Time (n=1000)', 
   title2='Efficiency (assuming $n^2$ FLOPS)',
   flops=1000**2,
-  # iterations=[10, 1000, 1000, 1000])
-  iterations=[1000, 1000, 1000])
+  iterations=[10, 1000, 1000, 1000])
+  # iterations=[1000, 1000, 1000])
 
 # LU Decomposition
 times = []
 A = np.random.rand(1000, 1000)
-# times.append(profile_fn(LU_decomp_naive, [A], 1))
+times.append(profile_fn(LU_decomp_naive, [A], 1))
 times.append(profile_fn(LU_decomp_np, [A], 10))
 times.append(profile_fn(LU_decomp_sp, [A], 10))
 B = torch.rand(1000, 1000)
@@ -254,18 +254,18 @@ times.append(profile_fn(LU_decomp_torch, [B], 10))
 times.append(0.125820)
 plot_times(
   times=times, 
-  # tools=['Naive Implementation', 'NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
-  tools=['NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
+  tools=['Naive Implementation', 'NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
+  # tools=['NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
   title1='Executiion Time (n=1000)', 
   title2='Efficiency (assuming $n^3$ FLOPS)',
   flops=1000**3,
-  # iterations=[10, 10, 10, 10, 10])
-  iterations=[10, 10, 10, 10])
+  iterations=[10, 10, 10, 10, 10])
+  # iterations=[10, 10, 10, 10])
 
 # QR Decomposition
 times = []
 A = np.random.rand(1000, 1000)
-# times.append(profile_fn(QR_decomp_naive, [A], 1))
+times.append(profile_fn(QR_decomp_naive, [A], 1))
 times.append(profile_fn(QR_decomp_np, [A], 10))
 times.append(profile_fn(QR_decomp_sp, [A], 10))
 B = torch.rand(1000, 1000)
@@ -273,13 +273,13 @@ times.append(profile_fn(QR_decomp_torch, [B], 10))
 times.append(0.543667)
 plot_times(
   times=times, 
-  # tools=['Naive Implementation', 'NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
-  tools=['NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
+  tools=['Naive Implementation', 'NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
+  # tools=['NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
   title1='Executiion Time (n=1000)', 
   title2='Efficiency (assuming $n^3$ FLOPS)',
   flops=1000**3,
-  # iterations=[1, 10, 10, 10, 10])
-  iterations=[10, 10, 10, 10])
+  iterations=[1, 10, 10, 10, 10])
+  # iterations=[10, 10, 10, 10])
 
 # Eigen Decomposition
 times = []
