@@ -180,7 +180,7 @@ times.append(profile_fn(mat_mul_sp, [A, B], 100))
 C = torch.rand(1000, 1000)
 D = torch.rand(1000, 1000)
 times.append(profile_fn(mat_mul_torch, [C, D], 100))
-times.append(2.633488)
+times.append(2.540003)
 plot_times(
   times=times, 
   tools=['Naive Implementation', 'NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
@@ -201,7 +201,7 @@ times.append(profile_fn(mat_mul_sp, [A, b], 10000))
 C = torch.rand(1000, 1000)
 d = torch.rand(1000, 1)
 times.append(profile_fn(mat_mul_torch, [C, d], 10000))
-times.append(0.030656)
+times.append(1.972550)
 plot_times(
   times=times, 
   tools=['Naive Implementation', 'NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
@@ -222,7 +222,7 @@ times.append(profile_fn(dot_product_sp, [a, b], 100000))
 c = torch.rand(1000)
 d = torch.rand(1000)
 times.append(profile_fn(dot_product_torch, [c, d], 100000))
-times.append(5.313654)
+times.append(54.224907)
 plot_times(
   times=times, 
   tools=['Naive Implementation', 'NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
@@ -242,7 +242,7 @@ times.append(profile_fn(element_wise_ops_np, [A, B], 1000))
 C = torch.rand(1000, 1000)
 D = torch.rand(1000, 1000)
 times.append(profile_fn(element_wise_ops_torch, [C, D], 1000))
-times.append(48.191421)
+times.append(0.584751)
 plot_times(
   times=times, 
   tools=['Naive Implementation', 'NumPy', 'PyTorch', 'MATLAB'],
@@ -261,7 +261,7 @@ times.append(profile_fn(LU_decomp_np, [A], 10))
 times.append(profile_fn(LU_decomp_sp, [A], 10))
 B = torch.rand(1000, 1000)
 times.append(profile_fn(LU_decomp_torch, [B], 10))
-times.append(0.125820)
+times.append(0.135383)
 plot_times(
   times=times, 
   tools=['Naive Implementation', 'NumPy', 'SciPy', 'PyTorch', 'MATLAB'],

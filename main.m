@@ -12,7 +12,7 @@ end
 toc
 
 tic
-for i = 1:100
+for i = 1:10000
     mat_mul(A,b); 
 end
 toc
@@ -21,7 +21,7 @@ toc
 % timeit(f)
 
 tic
-for i = 1:10000
+for i = 1:100000
     dot_product(A,B); 
 end
 toc
@@ -30,7 +30,7 @@ toc
 % timeit(f)
 
 tic
-for i = 1:100000
+for i = 1:1000
     element_wise_ops(A,B); 
 end
 toc
