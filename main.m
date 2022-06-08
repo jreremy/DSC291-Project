@@ -71,7 +71,7 @@ function C = dot_product(A,B)
 end
 
 function C = element_wise_ops(A,B)
-    C = A .* B;
+    C = (A + B) .* B;
 end
 
 function [L, U] = LU_decomp(A)
