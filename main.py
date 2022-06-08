@@ -149,6 +149,14 @@ def eig_torch(A):
   return vals, vecs
 
 # Testing
+colormap= {
+  'Naive Implementation': 'b',
+  'NumPy': 'g',
+  'SciPy': 'r',
+  'PyTorch': 'c',
+  'MATLAB': 'm'
+}
+
 def profile_fn(fn, inputs, iterations):
   total_time = 0
   for it in range(iterations):
@@ -196,7 +204,7 @@ times.append(profile_fn(mat_mul_sp, [A, B], 100))
 C = torch.rand(1000, 1000)
 D = torch.rand(1000, 1000)
 times.append(profile_fn(mat_mul_torch, [C, D], 100))
-times.append(2.633488)
+times.append(2.540003)
 plot_times(
   times=times, 
   tools=['Naive Implementation', 'NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
@@ -244,6 +252,7 @@ plot_times(
   flops=1000,
   iterations=[100, 100000, 100000, 100000, 100000])
 
+
 # Element-wise Addition/Multiplication
 times = []
 A = np.random.rand(1000, 1000)
@@ -262,6 +271,7 @@ plot_times(
   flops=1000**2,
   iterations=[10, 1000, 1000, 1000])
 
+
 # LU Decomposition
 times = []
 A = np.random.rand(1000, 1000)
@@ -270,7 +280,7 @@ times.append(profile_fn(LU_decomp_np, [A], 10))
 times.append(profile_fn(LU_decomp_sp, [A], 10))
 B = torch.rand(1000, 1000)
 times.append(profile_fn(LU_decomp_torch, [B], 10))
-times.append(0.125820)
+times.append(0.135383)
 plot_times(
   times=times, 
   tools=['Naive Implementation', 'NumPy', 'SciPy', 'PyTorch', 'MATLAB'],
