@@ -238,7 +238,7 @@ plot_times(
   title1='Executiion Time (n=1000)', 
   title2='Efficiency (assuming $n$ FLOPS)',
   flops=1000,
-  iterations=[100, 100000, 100000, 100000, 100000])
+  iterations=[1000, 100000, 100000, 100000, 100000])
   # iterations=[100000, 100000, 100000, 100000])
 
 # Element-wise Addition/Multiplication
@@ -277,7 +277,7 @@ plot_times(
   title1='Executiion Time (n=1000)', 
   title2='Efficiency (assuming $n^3$ FLOPS)',
   flops=1000**3,
-  iterations=[10, 10, 10, 10, 10])
+  iterations=[1, 10, 10, 10, 10])
   # iterations=[10, 10, 10, 10])
 
 # QR Decomposition
